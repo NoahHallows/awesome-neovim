@@ -111,7 +111,7 @@ return {
             -- you can do any additional lsp server setup here
             setup = {
                 lua_ls = function(server, opts)
-                    require("lspconfig")[server].setup(opts)
+                   vim.lsp.enable(server,opts)
                 end,
             },
         },
@@ -132,7 +132,7 @@ return {
                         return
                     end
                 end
-                require("lspconfig")[server].setup(server_config)
+                   vim.lsp.enable(server,opts)
             end
 
             local servers = opts.servers
